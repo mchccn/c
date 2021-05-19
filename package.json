@@ -1,7 +1,7 @@
 {
   "name": "@cursorsdottsx/c",
   "version": "1.0.0",
-  "description": "",
+  "description": "F*ck require and import, use crates (will still need require and import tho :C)!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

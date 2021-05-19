@@ -1,37 +1,37 @@
-(function () {
-	const store = new Map();
+(function() {
+    const store = new Map();
 
-	globalThis.crates = function crates(name, crate) {
-		if (typeof name === "string") {
-			if (typeof crate === "undefined") {
-				if (!store.has(name)) throw new Error("Crate doesn't exist.");
+    globalThis.crates = function crates(name, crate) {
+        if (typeof name === "string") {
+            if (typeof crate === "undefined") {
+                if (!store.has(name)) throw new Error("Crate doesn't exist.");
 
-				return store.get(name);
-			}
+                return store.get(name);
+            }
 
-			if (typeof crate === "object") {
-				if (Array.isArray(crate)) {
-					if (!store.has(name)) throw new Error("Crate doesn't exist");
+            if (typeof crate === "object") {
+                if (Array.isArray(crate)) {
+                    if (!store.has(name)) throw new Error("Crate doesn't exist");
 
-					if (typeof store.get(name) !== "function") throw new Error("Crate isn't callable.");
+                    if (typeof store.get(name) !== "function") throw new Error("Crate isn't callable.");
 
-					return store.get(name)(...crate);
-				}
+                    return store.get(name)(...crate);
+                }
 
-				if (store.has(name)) throw new Error("Crate already exists.");
+                if (store.has(name)) throw new Error("Crate already exists.");
 
-				store.set(name, crate);
+                store.set(name, crate);
 
-				return crate;
-			}
+                return crate;
+            }
 
-			if (typeof crate === "function") {
-				if (store.has(name)) throw new Error("Crate already exists.");
+            if (typeof crate === "function") {
+                if (store.has(name)) throw new Error("Crate already exists.");
 
-				store.set(name, crate);
+                store.set(name, crate);
 
-				return crate;
-			}
-		}
-	}
+                return crate;
+            }
+        }
+    }
 })();

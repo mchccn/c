@@ -30,7 +30,7 @@
 
 # @cursorsdottsx/c
 
-F*ck require and import, use crates (will still need require and import tho :C)!
+F\*ck require and import, use crates (will still need require and import tho :C)!
 
 Crates is very easy to install! It can be installed with either NPM or Yarn:
 
@@ -45,20 +45,21 @@ yarn add @cursorsdottsx/c
 It has a versatile API with just one function as well.
 
 ```js
+const crates = require("@cursorsdottsx/c");
+
 crates("add", (a, b) => {
-	return a + b;
+    return a + b;
 });
 
-
 function add(a, b) {
-	return crates("add", [a, b]);
+    return crates("add", [a, b]);
 }
 
 crates("math", {
-	add,
-	subtract(a, b) {
-		return a - b;
-	},
+    add,
+    subtract(a, b) {
+        return a - b;
+    },
 });
 
 console.log(add(1, 2)); // 3
@@ -71,18 +72,22 @@ console.log(crates("math").subtract(1, 2)); // -1
 ### `crates` – Four overloads:
 
 `crates(name)` – Retrieve a crate.
-- `name` – The name of the crate.
+
+-   `name` – The name of the crate.
 
 `crates(name, args)` – Retrieves a crate and calls it (has to be a function).
-- `name` – The name of the crate.
-- `args` – Array of arguments to pass to the crate.
+
+-   `name` – The name of the crate.
+-   `args` – Array of arguments to pass to the crate.
 
 `crates(name, object)` – Defines a new crate.
-- `name` – The name of the crate.
-- `object` – The crate.
+
+-   `name` – The name of the crate.
+-   `object` – The crate.
 
 `crates(name, function)` – Defines a new crate as a function that can be called.
-- `name` – The name of the crate.
-- `object` – The crate.
+
+-   `name` – The name of the crate.
+-   `object` – The crate.
 
 [npm abc's homepage](https://codepen.io/cursorsdottsx/full/KKWNRaY)

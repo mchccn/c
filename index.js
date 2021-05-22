@@ -33,5 +33,7 @@
                 return crate;
             }
         }
+
+        throw new Error("Crate name must be a string.");
     }
 })();

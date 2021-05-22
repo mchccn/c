@@ -45,7 +45,7 @@ yarn add @cursorsdottsx/c
 It has a versatile API with just one function as well.
 
 ```js
-const crates = require("@cursorsdottsx/c");
+const crates = require("@cursorsdottsx/c").default;
 
 crates("add", (a, b) => {
     return a + b;
